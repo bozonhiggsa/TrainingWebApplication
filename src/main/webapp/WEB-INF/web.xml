@@ -9,14 +9,25 @@ Inc.//DTD Web Application 2.3//EN"
          version="2.4">
 
     <servlet>
-        <servlet-name>CommonServlet</servlet-name>
+        <servlet-name>LoginServlet</servlet-name>
         <servlet-class>
-            training.web.application.servlets.CommonServlet
+            training.web.application.servlets.LoginServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CommonServlet</servlet-name>
-        <url-pattern>/main</url-pattern>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EnterServlet</servlet-name>
+        <servlet-class>
+            training.web.application.servlets.EnterServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnterServlet</servlet-name>
+        <url-pattern>/enter</url-pattern>
     </servlet-mapping>
 
     <filter>

@@ -12,34 +12,33 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Registration form</title>
+    <title>Login page</title>
 
     <link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/css/common.css" rel="stylesheet">
-
 </head>
 
 <body>
 
 <div class="container">
 
-    <h4 class="text-center">Please fill in the information below to create your account</h4>
+    <form method="POST" action="${contextPath}/login" class="form-signin" accept-charset="UTF-8">
+        <h4 class="text-left">Log in</h4>
 
-    <form method="POST" action="${contextPath}/createUser" class="form-signin" accept-charset="UTF-8">
         <div class="form-group">
-            <h5 class="text-left">Login</h5>
             <input name="login" type="text" class="form-control" placeholder="Enter your login" autofocus="true" required/>
-            <h5 class="text-left">Password</h5>
-            <input name="password" type="password" class="form-control" placeholder="Enter your password" required/>
-            <h5 class="text-left">Name</h5>
-            <input name="name" type="text" class="form-control" placeholder="Enter your name" required/>
-            <h5 class="text-left">Surname</h5>
-            <input name="surname" type="text" class="form-control"/>
-            <h5 class="text-left">Email</h5>
-            <input name="email" type="text" class="form-control" placeholder="Enter your e-mail" required/>
+            <input name="password" type="password" class="form-control" placeholder="Enter your password" required />
+
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            <h4 class="text-center refer"><a href="${contextPath}/Registration.jsp">Create an account</a></h4>
         </div>
 
+    </form>
+
+    <form method="GET" action="${contextPath}/index.jsp" class="form-signin">
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Enter as a guest</button>
+        </div>
     </form>
 
 </div>

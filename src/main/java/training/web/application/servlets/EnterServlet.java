@@ -1,5 +1,7 @@
 package training.web.application.servlets;
 
+import training.web.application.model.User;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * The Servlet that handles the entering common users (including Guest) on the main page.
+ * The Servlet that handles the entering user in your personal cabinet.
  * @author Ihor Savchenko
  */
-public class CommonServlet extends HttpServlet {
+public class EnterServlet extends HttpServlet {
 
-    private static final String NAME = CommonServlet.class.getName();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/views/Main.jsp");
-        dispatcher.forward(req, resp);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+        requestDispatcher.forward(req, resp);
     }
 }
