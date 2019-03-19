@@ -30,6 +30,39 @@ Inc.//DTD Web Application 2.3//EN"
         <url-pattern>/enter</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>
+            training.web.application.servlets.LogoutServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateUserServlet</servlet-name>
+        <servlet-class>
+            training.web.application.servlets.CreateUserServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateUserServlet</servlet-name>
+        <url-pattern>/createUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AfterCreateServlet</servlet-name>
+        <servlet-class>
+            training.web.application.servlets.AfterCreateServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AfterCreateServlet</servlet-name>
+        <url-pattern>/afterCreate</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>

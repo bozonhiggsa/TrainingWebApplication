@@ -48,6 +48,13 @@
                             </div>
                         </div>
                     </c:if>
+                    <c:if test="${!empty user}">
+                        <div class="col-lg-2">
+                            <div class="login animated fadeInRight">
+                                <a href="${contextPath}/logout">LogOut</a>
+                            </div>
+                        </div>
+                    </c:if>
                 </div>
 
                 <c:if test="${!empty user}">
