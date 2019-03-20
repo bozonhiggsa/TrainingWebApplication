@@ -273,7 +273,7 @@ ul, li {
     font-weight: 700;
 }
 
-@media (max-width:767px){
+@media screen and (max-width:767px){
     #footer h5 {
         padding-left: 0;
         border-left: transparent;
@@ -282,7 +282,7 @@ ul, li {
     }
 }
 
-@media (max-width:1023px){
+@media screen and (max-width:1023px){
     .main {
         text-align: center;
     }
@@ -293,6 +293,33 @@ ul, li {
         width: auto;
     }
     .main__partners {
-        text-align: left;
+        text-align: center;
+    }
+    .icons {
+        justify-content: center;
+    }
+    .icons__item:nth-child(5) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width:544px){
+    .form__btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .form__input {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width:424px){
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu__item {
+        margin-bottom: 10px;
     }
 }
