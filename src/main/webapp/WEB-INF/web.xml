@@ -64,14 +64,14 @@ Inc.//DTD Web Application 2.3//EN"
     </servlet-mapping>
 
     <filter>
-        <filter-name>LoginFilter</filter-name>
+        <filter-name>ValidateRegistrationFilter</filter-name>
         <filter-class>
-            training.web.application.filters.LoginFilter
+            training.web.application.filters.ValidateRegistrationFilter
         </filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>LoginFilter</filter-name>
-        <url-pattern>/login</url-pattern>
+        <filter-name>ValidateRegistrationFilter</filter-name>
+        <url-pattern>/createUser</url-pattern>
     </filter-mapping>
 
     <welcome-file-list>

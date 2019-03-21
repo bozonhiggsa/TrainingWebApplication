@@ -23,6 +23,11 @@
 
 <div class="container">
 
+    <c:if test = "${incorrectRegistration == true}">
+        <h4 class="text-center red">You have sent the incorrect information!</h4>
+    </c:if>
+
+    <br>
     <h4 class="text-center">Please fill in the information below to create your account</h4>
 
     <form method="POST" action="${contextPath}/createUser" class="form-signin" accept-charset="UTF-8">

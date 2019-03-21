@@ -25,8 +25,13 @@ public class LoginServlet extends HttpServlet {
         if(login.equals("admin") && password.equals("admin")){
             User user = new User("admin", "admin", "Oleg", "Olegov", "some@gmail.com");
             session.setAttribute("user", user);
+            resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/enter"));
+        }
+        else {
+            req.setAttribute("incorrectLogin", true);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
+            dispatcher.forward(req, resp);
         }
 
-        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/enter"));
     }
 }

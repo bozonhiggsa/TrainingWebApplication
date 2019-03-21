@@ -10,12 +10,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * The Filter subclass that validates fields data while processing LOGin any User.
+ * The Filter subclass that validates fields data while registering any User.
  * @author Ihor Savchenko
  */
-public class LoginFilter extends BaseFilter {
-
-    private static final String NAME = LoginFilter.class.getName();
+public class ValidateRegistrationFilter extends BaseFilter {
 
     public void doFilter(HttpServletRequest req, HttpServletResponse resp,
                          FilterChain filterChain) throws IOException, ServletException {
@@ -24,9 +22,15 @@ public class LoginFilter extends BaseFilter {
 
         Pattern loginPattern = Pattern.compile("^[A-Za-z_]([A-Za-z\\d_]{2,19})$");
         Pattern passwordPattern = Pattern.compile("^[\\w]{5,20}$");
+        Pattern namePattern = Pattern.compile("^[A-ZА-Я]([a-zа-я]{1,19})$");
+        Pattern surnamePattern = Pattern.compile("^[A-ZА-Я]([a-zа-я]{1,19})$");
+        Pattern emailPattern = Pattern.compile("^[\\w]([\\w-]{1,19})@([a-z]{3,8})\\.([a-z]{2,3})$");
 
         Matcher loginMatcher = loginPattern.matcher(req.getParameter("login"));
         Matcher passwordMatcher = passwordPattern.matcher(req.getParameter("password"));
+        Matcher nameMatcher = namePattern.matcher(req.getParameter("name"));
+        Matcher surnameMatcher = surnamePattern.matcher(req.getParameter("surname"));
+        Matcher emailMatcher = emailPattern.matcher(req.getParameter("email"));
 
         if(!loginMatcher.matches()){
             incorrectFieldFound = true;
@@ -34,9 +38,19 @@ public class LoginFilter extends BaseFilter {
         else if(!passwordMatcher.matches()){
             incorrectFieldFound = true;
         }
+        else if(!nameMatcher.matches()){
+            incorrectFieldFound = true;
+        }
+        else if(!surnameMatcher.matches() && !req.getParameter("surname").equals("")){
+            incorrectFieldFound = true;
+        }
+        else if(!emailMatcher.matches()){
+            incorrectFieldFound = true;
+        }
 
         if(incorrectFieldFound){
-            RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/views/ErrorLogin.jsp");
+            req.setAttribute("incorrectRegistration", true);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/registration.jsp");
             dispatcher.forward(req, resp);
         }
         else filterChain.doFilter(req, resp);

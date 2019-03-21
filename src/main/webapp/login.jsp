@@ -22,6 +22,11 @@
 
 <div class="container">
 
+    <c:if test = "${incorrectLogin == true}">
+        <h4 class="text-center red">You have entered incorrect login or password!</h4>
+    </c:if>
+
+    <br>
     <form method="POST" action="${contextPath}/login" class="form-signin" accept-charset="UTF-8">
         <h4 class="text-left">Log in</h4>
 
@@ -30,7 +35,7 @@
             <input name="password" type="password" class="form-control" placeholder="Enter your password" required />
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-            <h4 class="text-center refer"><a href="${contextPath}/Registration.jsp">Create an account</a></h4>
+            <h4 class="text-center refer"><a href="${contextPath}/registration.jsp">Create an account</a></h4>
         </div>
 
     </form>
