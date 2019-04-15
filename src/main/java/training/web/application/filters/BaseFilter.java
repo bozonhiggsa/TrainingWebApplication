@@ -1,5 +1,7 @@
 package training.web.application.filters;
 
+import training.web.application.dao.DBException;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +27,7 @@ public abstract class BaseFilter implements Filter {
         doFilter(req, resp, filterChain);
     }
 
-    public abstract void doFilter(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException;
+    public abstract void doFilter(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException, DBException;
 
     public void destroy() {
          /*NOP*/

@@ -27,6 +27,10 @@
         <h4 class="text-center red">You have sent the incorrect information!</h4>
     </c:if>
 
+    <c:if test = "${matchUser == true}">
+        <h4 class="text-center red">User with such data exists already!</h4>
+    </c:if>
+
     <br>
     <h4 class="text-center">Please fill in the information below to create your account</h4>
 

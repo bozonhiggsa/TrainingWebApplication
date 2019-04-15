@@ -41,14 +41,14 @@
                             </ul>
                         </nav>
                     </div>
-                    <c:if test="${empty user}">
+                    <c:if test="${empty user && empty admin}">
                         <div class="col-lg-2">
                             <div class="login animated fadeInRight">
                                 <a href="${contextPath}/login.jsp">Login</a>
                             </div>
                         </div>
                     </c:if>
-                    <c:if test="${!empty user}">
+                    <c:if test="${!empty user || !empty admin}">
                         <div class="col-lg-2">
                             <div class="login animated fadeInRight">
                                 <a href="${contextPath}/logout">LogOut</a>
@@ -64,7 +64,16 @@
                         </div>
                     </div>
                 </c:if>
-                <c:if test="${empty user}">
+
+                <c:if test="${!empty admin}">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2>Hi admin!</h2>
+                        </div>
+                    </div>
+                </c:if>
+
+                <c:if test="${empty user && empty admin}">
                     <div class="row">
                         <div class="col-lg-12">
                             <h2>Hi guest!</h2>

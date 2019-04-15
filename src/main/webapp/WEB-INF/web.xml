@@ -74,6 +74,17 @@ Inc.//DTD Web Application 2.3//EN"
         <url-pattern>/createUser</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>SearchMatchFilter</filter-name>
+        <filter-class>
+            training.web.application.filters.SearchMatchFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SearchMatchFilter</filter-name>
+        <url-pattern>/createUser</url-pattern>
+    </filter-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

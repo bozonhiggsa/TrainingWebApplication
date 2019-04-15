@@ -16,7 +16,7 @@ public class CommonDaoJdbc extends AbstractDaoJdbc implements CommonDao {
     public static final String SELECT_ALL_ADMINS = "SELECT * FROM training_web_application.admins";
     public static final String SELECT_ALL_USERS = "SELECT * FROM training_web_application.users";
     public static final String SELECT_ADMIN = "SELECT * FROM training_web_application.admins AS AD WHERE AD.login = ? AND AD.password = ?";
-    public static final String SELECT_USER = "SELECT * FROM traing_web_application.users AS US WHERE US.login = ? AND US.password = ?";
+    public static final String SELECT_USER = "SELECT * FROM training_web_application.users AS US WHERE US.login = ? AND US.password = ?";
     public static final String ADD_USER = "INSERT INTO training_web_application.users(login, password, name, surname, email, access) VALUES(?, ?, ?, ?, ?, ?)";
 
     public Set<Admin> selectAllAdmins() throws DBSystemException, SQLException {
