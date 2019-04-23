@@ -63,6 +63,11 @@
                             <h2>Hi ${user.name} ${user.surname}!</h2>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-12 menu__item">
+                            <a href="${contextPath}/enter">Return</a>
+                        </div>
+                    </div>
                 </c:if>
 
                 <c:if test="${!empty admin}">
