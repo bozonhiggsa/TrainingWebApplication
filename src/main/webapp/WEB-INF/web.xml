@@ -31,6 +31,17 @@ Inc.//DTD Web Application 2.3//EN"
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>EnterAdminServlet</servlet-name>
+        <servlet-class>
+            training.web.application.servlets.EnterAdminServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnterAdminServlet</servlet-name>
+        <url-pattern>/enterAdmin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>
             training.web.application.servlets.LogoutServlet

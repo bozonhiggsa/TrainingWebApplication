@@ -32,7 +32,6 @@ public class LoginServlet extends HttpServlet {
 
         try {
             user = commonDao.selectUser(login, password);
-            admin = commonDao.selectAdmin(login, password);
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DBException("Select user by login and password from data base is failed", e);
@@ -42,14 +41,22 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", user);
             resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/enter"));
         }
-        else if(admin != null){
-            session.setAttribute("admin", admin);
-            resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/enter"));
-        }
         else {
-            req.setAttribute("incorrectLogin", true);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
-            dispatcher.forward(req, resp);
+            try {
+                admin = commonDao.selectAdmin(login, password);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw new DBException("Select user by login and password from data base is failed", e);
+            }
+
+            if (admin != null) {
+                session.setAttribute("admin", admin);
+                resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/enterAdmin"));
+            } else {
+                req.setAttribute("incorrectLogin", true);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
+                dispatcher.forward(req, resp);
+            }
         }
 
     }
