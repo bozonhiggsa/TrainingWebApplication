@@ -5,7 +5,6 @@ package training.web.application.model;
  * @author Ihor Savchenko
  */
 public class Admin implements Comparable<Admin> {
-
     private final int id;
     private String login;
     private String password;

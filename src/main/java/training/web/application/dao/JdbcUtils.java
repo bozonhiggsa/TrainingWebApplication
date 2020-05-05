@@ -10,7 +10,6 @@ import java.sql.Statement;
  * @author Ihor Savchenko
  */
 public final class JdbcUtils {
-
     public JdbcUtils() {
     }
 

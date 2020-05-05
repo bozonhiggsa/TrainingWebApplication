@@ -8,6 +8,5 @@ import java.sql.SQLException;
  * @author Ihor Savchenko
  */
 public interface ConnectionFactory {
-
     Connection newConnection() throws SQLException;
 }

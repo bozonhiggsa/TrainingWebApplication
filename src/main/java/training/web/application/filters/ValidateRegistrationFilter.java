@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
  * @author Ihor Savchenko
  */
 public class ValidateRegistrationFilter extends BaseFilter {
-
     public void doFilter(HttpServletRequest req, HttpServletResponse resp,
                          FilterChain filterChain) throws IOException, ServletException {
 
@@ -23,13 +22,13 @@ public class ValidateRegistrationFilter extends BaseFilter {
         Pattern loginPattern = Pattern.compile("^[A-Za-z_]([A-Za-z\\d_]{2,19})$");
         Pattern passwordPattern = Pattern.compile("^[\\w]{5,20}$");
         Pattern namePattern = Pattern.compile("^[A-ZА-Я]([a-zа-я]{1,19})$");
-        Pattern surnamePattern = Pattern.compile("^[A-ZА-Я]([a-zа-я]{1,19})$");
+        Pattern lastnamePattern = Pattern.compile("^[A-ZА-Я]([a-zа-я]{1,19})$");
         Pattern emailPattern = Pattern.compile("^[\\w]([\\w-]{1,19})@([a-z]{3,8})\\.([a-z]{2,3})$");
 
         Matcher loginMatcher = loginPattern.matcher(req.getParameter("login"));
         Matcher passwordMatcher = passwordPattern.matcher(req.getParameter("password"));
         Matcher nameMatcher = namePattern.matcher(req.getParameter("name"));
-        Matcher surnameMatcher = surnamePattern.matcher(req.getParameter("surname"));
+        Matcher lastnameMatcher = lastnamePattern.matcher(req.getParameter("lastname"));
         Matcher emailMatcher = emailPattern.matcher(req.getParameter("email"));
 
         if(!loginMatcher.matches()){
@@ -41,7 +40,7 @@ public class ValidateRegistrationFilter extends BaseFilter {
         else if(!nameMatcher.matches()){
             incorrectFieldFound = true;
         }
-        else if(!surnameMatcher.matches() && !req.getParameter("surname").equals("")){
+        else if(!lastnameMatcher.matches() && !req.getParameter("lastname").equals("")){
             incorrectFieldFound = true;
         }
         else if(!emailMatcher.matches()){

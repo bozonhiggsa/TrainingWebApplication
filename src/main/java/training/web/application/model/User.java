@@ -1,24 +1,20 @@
 package training.web.application.model;
 
-/**
- * Created by Adnmin on 3/12/2019.
- */
 public class User implements Comparable<User> {
-
     private int id;
     private String login;
     private String password;
     private String name;
-    private String surname;
+    private String lastname;
     private String email;
     private Boolean access;
 
-    public User(int id,String login,String password,String name,String surname,String email,Boolean access){
+    public User(int id,String login,String password,String name,String lastname,String email,Boolean access){
         this.id=id;
         this.login=login;
         this.password=password;
         this.name=name;
-        this.surname=surname;
+        this.lastname=lastname;
         this.email=email;
         this.access=access;
     }
@@ -63,12 +59,12 @@ public class User implements Comparable<User> {
         this.name=name;
     }
 
-    public String getSurname(){
-        return surname;
+    public String getLastname(){
+        return lastname;
     }
 
-    public void setSurname(String surname){
-        this.surname=surname;
+    public void setLastname(String lastname){
+        this.lastname=lastname;
     }
 
     public String getEmail(){
@@ -80,9 +76,9 @@ public class User implements Comparable<User> {
     }
 
     public int compareTo(User user){
-        if(this.getSurname().compareTo(user.getSurname())<0)
+        if(this.getLastname().compareTo(user.getLastname())<0)
             return -1;
-        else if(this.getSurname().compareTo(user.getSurname())>0)
+        else if(this.getLastname().compareTo(user.getLastname())>0)
             return 1;
         else if(this.getName().compareTo(user.getName())<0)
             return -1;

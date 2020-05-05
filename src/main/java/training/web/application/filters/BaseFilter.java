@@ -15,7 +15,6 @@ import java.io.IOException;
  * @author Ihor Savchenko
  */
 public abstract class BaseFilter implements Filter {
-
     public void init(FilterConfig filterConfig) throws ServletException {
          /*NOP*/
     }

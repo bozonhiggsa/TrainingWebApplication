@@ -13,7 +13,6 @@ import java.sql.SQLException;
  * @author Ihor Savchenko
  */
 public class ConnectionPool_Derby implements ConnectionFactory {
-
     ConnectionPoolDataSource dataSource;
     private final Settings SETTINGS = Settings.getInstance().getInstance();
 
@@ -22,7 +21,6 @@ public class ConnectionPool_Derby implements ConnectionFactory {
     }
 
     public ConnectionPool_Derby() {
-
         EmbeddedConnectionPoolDataSource connectionPool = new EmbeddedConnectionPoolDataSource();
         connectionPool.setDatabaseName(SETTINGS.value("databaseName"));
         this.dataSource = connectionPool;

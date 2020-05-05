@@ -11,7 +11,6 @@ import java.util.Set;
  * @author Ihor Savchenko
  */
 public interface CommonDao {
-
     Set<Admin> selectAllAdmins() throws DBSystemException, SQLException;
 
     Set<User> selectAllUsers() throws DBSystemException, SQLException;
@@ -20,7 +19,5 @@ public interface CommonDao {
 
     User selectUser(String login, String password) throws DBSystemException, SQLException;
 
-    void addUser(String login, String password, String name, String surname, String email) throws DBSystemException, SQLException;
-
-
+    void addUser(String login, String password, String name, String lastname, String email) throws DBSystemException, SQLException;
 }

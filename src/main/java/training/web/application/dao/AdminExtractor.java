@@ -11,7 +11,6 @@ import java.sql.SQLException;
  * @author Ihor Savchenko
  */
 public class AdminExtractor extends AbstractExtractor<Admin> {
-
     public Admin extract(ResultSet rs) throws SQLException {
         Admin admin = new Admin(rs.getInt("id"), rs.getString("login"), rs.getString("password"));
         return admin;

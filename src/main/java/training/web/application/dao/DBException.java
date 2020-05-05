@@ -5,7 +5,6 @@ package training.web.application.dao;
  * @author Ihor Savchenko
  */
 public class DBException extends RuntimeException {
-
     public DBException(String message, Throwable cause) {
         super(message, cause);
     }

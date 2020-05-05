@@ -13,7 +13,6 @@ import java.util.TreeSet;
  * @author Ihor Savchenko
  */
 public abstract class AbstractExtractor<T> {
-
     public abstract T extract(ResultSet rs) throws SQLException;
 
     public Set<T> extractAll(ResultSet rs) throws SQLException{

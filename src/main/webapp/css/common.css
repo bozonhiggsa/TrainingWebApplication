@@ -2,7 +2,7 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background: #F0F0DF;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .form-signin {
@@ -43,8 +43,8 @@ body {
 
 .form-signin button {
     margin-top: 10px;
-    background: #FF9000;
-    font-family: 'PT Sans', sans-serif;
+    background: #e76703;
+    font-family: 'Fira Sans', sans-serif;
     font-weight: 500;
     border: 0;
     cursor: pointer;
@@ -52,28 +52,24 @@ body {
 }
 
 .form-signin button:hover {
-    background: #FF331D;
+    background: #ff7000;
     font-weight: 600;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     color: #000;
 }
 
 .refer a {
      font-size: 22px;
      font-weight: 600;
-     color: #2B3A42;
+     color: #332c50;
  }
 
 .refer a:hover {
     text-decoration: none;
-    color: #BDD3DE;
+    color: #534884;
 }
 
 .refer a:focus {
     text-decoration: none;
-    color: #FF9000;
-}
-
-.red {
-    color: #856404;
+    color: #ff7000;
 }

@@ -20,7 +20,6 @@ import java.sql.SQLException;
  * @author Ihor Savchenko
  */
 public class LoginServlet extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
@@ -58,6 +57,5 @@ public class LoginServlet extends HttpServlet {
                 dispatcher.forward(req, resp);
             }
         }
-
     }
 }

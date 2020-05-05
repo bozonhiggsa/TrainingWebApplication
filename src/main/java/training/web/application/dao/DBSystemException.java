@@ -5,7 +5,6 @@ package training.web.application.dao;
  * @author Ihor Savchenko
  */
 public class DBSystemException extends DBException {
-
     public DBSystemException(String message, Throwable cause) {
         super(message, cause);
     }

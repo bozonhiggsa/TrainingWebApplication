@@ -12,23 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-/**
- * Created by Adnmin on 3/19/2019.
- */
 public class CreateUserServlet extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         String name = req.getParameter("name");
-        String surname = req.getParameter("surname");
+        String lastname = req.getParameter("lastname");
         String email = req.getParameter("email");
         CommonDao commonDao = new CommonDaoJdbc();
 
         try {
-            commonDao.addUser(login, password, name, surname, email);
+            commonDao.addUser(login, password, name, lastname, email);
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DBException("Creating of user in data base is failed", e);

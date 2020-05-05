@@ -12,12 +12,11 @@ import java.util.Set;
  * @author Ihor Savchenko
  */
 public class CommonDaoJdbc extends AbstractDaoJdbc implements CommonDao {
-
     public static final String SELECT_ALL_ADMINS = "SELECT * FROM training_web_application.admins";
     public static final String SELECT_ALL_USERS = "SELECT * FROM training_web_application.users";
     public static final String SELECT_ADMIN = "SELECT * FROM training_web_application.admins AS AD WHERE AD.login = ? AND AD.password = ?";
     public static final String SELECT_USER = "SELECT * FROM training_web_application.users AS US WHERE US.login = ? AND US.password = ?";
-    public static final String ADD_USER = "INSERT INTO training_web_application.users(login, password, name, surname, email, access) VALUES(?, ?, ?, ?, ?, ?)";
+    public static final String ADD_USER = "INSERT INTO training_web_application.users(login, password, name, lastname, email, access) VALUES(?, ?, ?, ?, ?, ?)";
 
     public Set<Admin> selectAllAdmins() throws DBSystemException, SQLException {
         Connection conn = getSerializableConnection();
@@ -88,7 +87,7 @@ public class CommonDaoJdbc extends AbstractDaoJdbc implements CommonDao {
         }
     }
 
-    public void addUser(String login, String password, String name, String surname, String email) throws DBSystemException, SQLException {
+    public void addUser(String login, String password, String name, String lastname, String email) throws DBSystemException, SQLException {
         Connection conn = getSerializableConnection();
         PreparedStatement preparedStatement = null;
         try{
@@ -96,7 +95,7 @@ public class CommonDaoJdbc extends AbstractDaoJdbc implements CommonDao {
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
             preparedStatement.setString(3, name);
-            preparedStatement.setString(4, surname);
+            preparedStatement.setString(4, lastname);
             preparedStatement.setString(5, email);
             preparedStatement.setBoolean(6, true);
             preparedStatement.executeUpdate();

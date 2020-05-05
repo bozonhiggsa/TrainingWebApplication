@@ -20,7 +20,6 @@ import java.util.Set;
  * Created by Adnmin on 4/15/2019.
  */
 public class SearchMatchFilter extends BaseFilter {
-
     @Override
     public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain) throws IOException, ServletException, DBException {
 

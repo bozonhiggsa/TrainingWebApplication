@@ -9,7 +9,6 @@ import java.util.Properties;
  * @author Ihor Savchenko
  */
 public class Settings {
-
     private static final Settings INSTANCE = new Settings();
 
     private final Properties PROPERTIES = new Properties();

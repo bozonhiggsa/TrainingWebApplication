@@ -8,11 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Created by Adnmin on 3/19/2019.
- */
 public class LogoutServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

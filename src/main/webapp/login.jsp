@@ -13,7 +13,7 @@
     <meta name="author" content="">
 
     <title>Login page</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/css/common.css" rel="stylesheet">
 </head>
@@ -21,12 +21,6 @@
 <body>
 
 <div class="container">
-
-    <c:if test = "${incorrectLogin == true}">
-        <h4 class="text-center red">You have entered incorrect login or password!</h4>
-    </c:if>
-
-    <br>
     <form method="POST" action="${contextPath}/login" class="form-signin" accept-charset="UTF-8">
         <h4 class="text-left">Log in</h4>
 
@@ -37,7 +31,6 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
             <h4 class="text-center refer"><a href="${contextPath}/registration.jsp">Create an account</a></h4>
         </div>
-
     </form>
 
     <form method="GET" action="${contextPath}/index.jsp" class="form-signin">
@@ -45,7 +38,6 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Enter as a guest</button>
         </div>
     </form>
-
 </div>
 </body>
 </html>

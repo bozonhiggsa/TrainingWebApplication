@@ -21,7 +21,6 @@ import java.util.Set;
  * @author Ihor Savchenko
  */
 public class EnterAdminServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

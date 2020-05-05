@@ -13,25 +13,14 @@
     <meta name="author" content="">
 
     <title>Registration form</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/css/common.css" rel="stylesheet">
-
 </head>
 
 <body>
 
 <div class="container">
-
-    <c:if test = "${incorrectRegistration == true}">
-        <h4 class="text-center red">You have sent the incorrect information!</h4>
-    </c:if>
-
-    <c:if test = "${matchUser == true}">
-        <h4 class="text-center red">User with such data exists already!</h4>
-    </c:if>
-
-    <br>
     <h4 class="text-center">Please fill in the information below to create your account</h4>
 
     <form method="POST" action="${contextPath}/createUser" class="form-signin" accept-charset="UTF-8">
@@ -43,14 +32,12 @@
             <h5 class="text-left">Name</h5>
             <input name="name" type="text" class="form-control" placeholder="Enter your name" required/>
             <h5 class="text-left">Surname</h5>
-            <input name="surname" type="text" class="form-control"/>
+            <input name="lastname" type="text" class="form-control"/>
             <h5 class="text-left">Email</h5>
             <input name="email" type="text" class="form-control" placeholder="Enter your e-mail" required/>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </div>
-
     </form>
-
 </div>
 </body>
 </html>

@@ -11,13 +11,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landing Page</title>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
     <link rel="stylesheet" href="${contextPath}/css/animate.css">
     <link rel="stylesheet" href="${contextPath}/css/main.css">
+    <link rel="stylesheet" href="${contextPath}/css/carousel.css">
 </head>
 <body>
         <header id="header" class="header">
@@ -33,10 +32,10 @@
                                     <a href="#">Home</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#">Features</a>
+                                    <a href="#">News</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#">Issues</a>
+                                    <a href="#">Events</a>
                                 </li>
                             </ul>
                         </nav>
@@ -56,16 +55,17 @@
                         </div>
                     </c:if>
                 </div>
-
                 <c:if test="${!empty user}">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h2>Hi ${user.name} ${user.surname}!</h2>
+                            <h2>Hi ${user.name} ${user.lastname}!</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 menu__item">
-                            <a href="${contextPath}/enter">Return</a>
+                            <h2>
+                                <a href="${contextPath}/enter">Return</a>
+                            </h2>
                         </div>
                     </div>
                 </c:if>
@@ -78,7 +78,9 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 menu__item">
-                            <a href="${contextPath}/enterAdmin">Return</a>
+                            <h2>
+                                <a href="${contextPath}/enterAdmin">Return</a>
+                            </h2>
                         </div>
                     </div>
                 </c:if>
@@ -95,184 +97,155 @@
                     <div class="col-lg-6">
                         <div class="main">
                             <h3 class="main__title">
-                                Common information
+                                About us
                             </h3>
                             <div class="main__intro">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, voluptates.
                             </div>
                             <p class="main__text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae commodi doloremque esse et id obcaecati, quia voluptatum. Consequatur distinctio fuga inventore laborum,
-                                 porro recusandae reprehenderit sapiente. Commodi, dolore dolorem.
+                                porro recusandae reprehenderit sapiente. Commodi, dolore dolorem.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam debitis dicta ea eaque est eveniet, facere fuga harum laboriosam laudantium necessitatibus neque nulla possimus quod repellat soluta velit vero voluptatum.
                             </p>
-                            <div class="main__partners">
-                                Our partners
-                            </div>
-                            <ul class="icons d-flex justify-content-left">
-                                <li class="icons__item">
-                                    <a href="#">
-                                        <i class="fab fa-angellist"></i>
-                                    </a>
-                                </li>
-                                <li class="icons__item">
-                                    <a href="#">
-                                        <i class="fab fa-envira"></i>
-                                    </a>
-                                </li>
-                                <li class="icons__item">
-                                    <a href="#">
-                                        <i class="fab fa-java"></i>
-                                    </a>
-                                </li>
-                                <li class="icons__item">
-                                    <a href="#">
-                                        <i class="fab fa-fort-awesome"></i>
-                                    </a>
-                                </li>
-                                <li class="icons__item">
-                                    <a href="#">
-                                        <i class="fab fa-first-order"></i>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
-
                     </div>
                     <div class="col-lg-6">
-                        <img src="${contextPath}/img/community.png" alt="Community" class="community">
+                        <img src="${contextPath}/img/community.jpg" alt="Community" class="community">
                     </div>
                 </div>
             </div>
         </header>
-        <section id="features" class="features">
+        <section id="topic" class="topic">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <div class="title">
-                            <h2 class="title__main">
-                                Essential features
+                            <h2 class="topic__title__main">
+                                Main topics
                             </h2>
-                            <p class="title__text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci, beatae ducimus excepturi facilis laudantium quod repellat sint. Ad aliquid blanditiis dicta illo ipsum minima minus nam porro reiciendis repellat?
-                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="feature d-flex">
-                            <div class="feature__icon">
-                                <i class="fas fa-tablet-alt"></i>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fab fa-amilia"></i></a>
                             </div>
-                            <div class="feature__block">
-                                <h3 class="feature__title">
-                                    Feature name
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
                                 </h3>
-                                <p class="feature__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature d-flex">
-                            <div class="feature__icon">
-                                <i class="fab fa-wizards-of-the-coast"></i>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-birthday-cake"></i></a>
                             </div>
-                            <div class="feature__block">
-                                <h3 class="feature__title">
-                                    Feature name
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
                                 </h3>
-                                <p class="feature__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature d-flex">
-                            <div class="feature__icon">
-                                <i class="fab fa-critical-role"></i>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-comments"></i></a>
                             </div>
-                            <div class="feature__block">
-                                <h3 class="feature__title">
-                                    Feature name
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
                                 </h3>
-                                <p class="feature__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature d-flex">
-                            <div class="feature__icon">
-                                <i class="fas fa-user-astronaut"></i>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-users"></i></a>
                             </div>
-                            <div class="feature__block">
-                                <h3 class="feature__title">
-                                    Feature name
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
                                 </h3>
-                                <p class="feature__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature d-flex">
-                            <div class="feature__icon">
-                                <i class="fas fa-pepper-hot"></i>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-smile-wink"></i></a>
                             </div>
-                            <div class="feature__block">
-                                <h3 class="feature__title">
-                                    Feature name
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
                                 </h3>
-                                <p class="feature__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="feature d-flex">
-                            <div class="feature__icon">
-                                <i class="fas fa-id-card"></i>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-fire-alt"></i></a>
                             </div>
-                            <div class="feature__block">
-                                <h3 class="feature__title">
-                                    Feature name
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
                                 </h3>
-                                <p class="feature__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-dragon"></i></a>
+                            </div>
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="topic__item">
+                            <div class="topic__item__icon">
+                                <a href="#"><i class="fas fa-dove"></i></a>
+                            </div>
+                            <div class="topic__item__block">
+                                <h3 class="topic__item__title">
+                                    Lorem ipsum
+                                </h3>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <section id="feedback" class="feedback">
+        <section id="carousel" class="carousel">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <div class="feedback__field">
-                            <h3 class="feedback__title">
-                                Give your feedback
-                            </h3>
-                            <p class="feedback__text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci, beatae ducimus excepturi facilis laudantium quod repellat sint. Ad aliquid blanditiis dicta illo ipsum minima minus nam porro reiciendis repellat?
-                            </p>
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="swiper-container main-slider" id="myCarousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide slider-bg-position" style="background:url(${contextPath}/img/fox1.jpg)" data-hash="slide1">
+                                </div>
+                                <div class="swiper-slide slider-bg-position" style="background:url(${contextPath}/img/fox2.jpg)" data-hash="slide2">
+                                </div>
+                                <div class="swiper-slide slider-bg-position" style="background:url(${contextPath}/img/fox3.jpg)" data-hash="slide3">
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Navigation -->
+                            <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+                            <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <form action="#" class="form">
-                            <input type="email" placeholder="Enter your e-mail" class="form__input" required>
-                            <button type="submit" class="form__btn">Submit</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -342,8 +315,8 @@
                 </div>
             </div>
         </footer>
-        <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
         <script src="${contextPath}/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="${contextPath}/js/carousel.js"></script>
 </body>
 </html>

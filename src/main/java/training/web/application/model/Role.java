@@ -5,6 +5,5 @@ package training.web.application.model;
  * @author Ihor Savchenko
  */
 public enum Role {
-
     User, Admin;
 }

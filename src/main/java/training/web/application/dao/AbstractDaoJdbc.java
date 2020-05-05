@@ -9,11 +9,9 @@ import java.sql.SQLException;
  * @author Ihor Savchenko
  */
 public abstract class AbstractDaoJdbc {
-
     private final ConnectionFactory FACTORY = new ConnectionPool_Derby();
 
     protected Connection getSerializableConnection() throws SQLException {
-
         try{
             Connection connection = FACTORY.newConnection();
             return connection;
