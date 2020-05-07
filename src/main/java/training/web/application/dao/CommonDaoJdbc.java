@@ -12,11 +12,12 @@ import java.util.Set;
  * @author Ihor Savchenko
  */
 public class CommonDaoJdbc extends AbstractDaoJdbc implements CommonDao {
-    public static final String SELECT_ALL_ADMINS = "SELECT * FROM training_web_application.admins";
-    public static final String SELECT_ALL_USERS = "SELECT * FROM training_web_application.users";
-    public static final String SELECT_ADMIN = "SELECT * FROM training_web_application.admins AS AD WHERE AD.login = ? AND AD.password = ?";
-    public static final String SELECT_USER = "SELECT * FROM training_web_application.users AS US WHERE US.login = ? AND US.password = ?";
-    public static final String ADD_USER = "INSERT INTO training_web_application.users(login, password, name, lastname, email, access) VALUES(?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_ALL_ADMINS = "SELECT * FROM training_web_application.admins";
+    private static final String SELECT_ALL_USERS = "SELECT * FROM training_web_application.users";
+    private static final String SELECT_ADMIN = "SELECT * FROM training_web_application.admins AS AD WHERE AD.login = ? AND AD.password = ?";
+    private static final String SELECT_USER = "SELECT * FROM training_web_application.users AS US WHERE US.login = ? AND US.password = ?";
+    private static final String ADD_USER = "INSERT INTO training_web_application.users(login, password, name, lastname, email, access) VALUES(?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_USER_ACCESS="UPDATE training_web_application.users AS US SET US.access=? WHERE US.id=?";
 
     public Set<Admin> selectAllAdmins() throws DBSystemException, SQLException {
         Connection conn = getSerializableConnection();
@@ -128,6 +129,25 @@ public class CommonDaoJdbc extends AbstractDaoJdbc implements CommonDao {
         finally{
             JdbcUtils.closeQuietly(rs);
             JdbcUtils.closeQuietly(statement);
+            JdbcUtils.closeQuietly(conn);
+        }
+    }
+
+    public void updateUserAccess(int id, boolean access) throws SQLException, DBSystemException {
+        Connection conn=getSerializableConnection();
+        PreparedStatement st=null;
+        ResultSet rs=null;
+        try {
+            st=conn.prepareStatement(UPDATE_USER_ACCESS);
+            st.setBoolean(1, access);
+            st.setInt(2, id);
+            st.executeUpdate();
+            conn.commit();
+        }catch (SQLException e){
+            JdbcUtils.rollbackQuietly(conn);
+            throw new DBSystemException("Can't execute UPDATE_USER_ACCESS",e);
+        }finally {
+            JdbcUtils.closeQuietly(st);
             JdbcUtils.closeQuietly(conn);
         }
     }

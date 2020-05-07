@@ -20,4 +20,6 @@ public interface CommonDao {
     User selectUser(String login, String password) throws DBSystemException, SQLException;
 
     void addUser(String login, String password, String name, String lastname, String email) throws DBSystemException, SQLException;
+
+    void updateUserAccess(int id, boolean access) throws SQLException, DBSystemException;
 }

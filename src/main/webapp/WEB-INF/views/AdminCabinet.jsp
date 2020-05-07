@@ -90,10 +90,10 @@
                                 </td>
                                 <td>
                                     <c:if test = "${user.access == true}">
-                                        <a href="${contextPath}/blockUser?id_user=${user.id}">Block</a>
+                                        <a href="${contextPath}/blockUser?access=false&id_user=${user.id}">Block</a>
                                     </c:if>
                                     <c:if test = "${user.access == false}">
-                                        <a href="${contextPath}/unblockUser?id_user=${user.id}">Unblock</a>
+                                        <a href="${contextPath}/blockUser?access=true&id_user=${user.id}">Unblock</a>
                                     </c:if>
                                 </td>
                             </tr>

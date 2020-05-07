@@ -74,6 +74,17 @@ Inc.//DTD Web Application 2.3//EN"
         <url-pattern>/afterCreate</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SetUserAccessServlet</servlet-name>
+        <servlet-class>
+            training.web.application.servlets.SetUserAccessServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetUserAccessServlet</servlet-name>
+        <url-pattern>/blockUser</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>ValidateRegistrationFilter</filter-name>
         <filter-class>
